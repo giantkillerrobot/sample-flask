@@ -11,4 +11,6 @@ app = Flask(__name__)
 def hello_world():
     print('hello')
     logging.debug('hello')
+    logging.debug('I am really really loving this!')
+    logging.debug('And yet another item!')
     return render_template("index.html")
