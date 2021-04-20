@@ -1,6 +1,7 @@
 from flask import Flask
 from flask import render_template
 import logging
+import os
 
 logging.basicConfig(level=logging.DEBUG)
 
@@ -17,5 +18,6 @@ def hello_world():
 
 @app.route('/test')
 def my_world():
+    logging.debug(os.environ.get('MYVAR'))
     logging.debug('My world test!')
     return 'My World!  Super simple'
