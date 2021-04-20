@@ -24,11 +24,3 @@ def my_world():
     logging.debug('My world test!')
     logging.error('Another logging entry!')
     return 'My World!  Super simple error log'
-
-@app.route('/api_test')
-def my_api_test():
-    logging.debug('Starting my_api_test')
-    my_dict = {"parameter": "temp", "value": 1000}
-    json_result = json.dumps(my_dict)
-    
-    return json_result
