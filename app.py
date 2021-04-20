@@ -14,3 +14,8 @@ def hello_world():
     logging.debug('I am really really loving this!')
     logging.debug('And yet another item!')
     return render_template("index.html")
+
+@app.route('/test')
+def my_world():
+    logging.debug('My world test!')
+    return 'My World!  Super simple'
