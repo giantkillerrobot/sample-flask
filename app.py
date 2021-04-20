@@ -25,10 +25,11 @@ def my_world():
     logging.error('Another logging entry!')
     return 'My World!  Super simple error log'
 
-@app.route('/api_test')
-def my_api_test():
+@app.route('/api_test/<value>')
+def my_api_test(value):
     logging.debug('Starting my_api_test')
-    my_dict = {"parameter": "temp", "value": 1000}
+    logging.debug(f"The value is:{value}")
+    my_dict = {"parameter": "temp", "value": value}
     json_result = json.dumps(my_dict)
     
     return json_result
