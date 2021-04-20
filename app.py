@@ -29,6 +29,7 @@ def my_world():
 def my_api_test(value):
     logging.debug('Starting my_api_test')
     logging.debug(f"The value is:{value}")
+    logging.debug(f"I am digging this!!!")
     value = int(value)
     my_dict = {"parameter": "temp", "value": value}
     json_result = json.dumps(my_dict)
