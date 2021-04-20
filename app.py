@@ -2,6 +2,7 @@ from flask import Flask
 from flask import render_template
 import logging
 import os
+import requests
 
 logging.basicConfig(level=logging.DEBUG)
 
