@@ -38,9 +38,7 @@ def my_world():
     logging.debug(os.environ.get('MYVAR'))
     logging.debug('My world test!')
     logging.error('Another logging entry!')
-    db = os.environ.get('DATABASE_URL')
-    logging.debug(db)
-    return 'My World!  Super simple error log'
+    return 'My World!  Super simple error log and it works great!'
 
 @app.route('/api_test/<value>')
 def my_api_test(value):
