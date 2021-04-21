@@ -1,5 +1,7 @@
 from flask import Flask
 from flask import render_template
+from flask_httpauth import HTTPBasicAuth
+from werkzeug.security import generate_password_hash, check_password_hash
 import logging
 import os
 import requests
@@ -8,6 +10,19 @@ import json
 logging.basicConfig(level=logging.DEBUG)
 
 app = Flask(__name__)
+auth = HTTPBasicAuth()
+
+users = {
+    "john": generate_password_hash("hello"),
+    "susan": generate_password_hash("bye"),
+    "gern": generate_password_hash("well"),
+}
+
+@auth.verify_password
+def verify_password(username, password):
+    if username in users and \
+            check_password_hash(users.get(username), password):
+        return username
 
 
 @app.route("/")
@@ -35,3 +50,10 @@ def my_api_test(value):
     json_result = json.dumps(my_dict)
     
     return json_result
+
+@app.route('/json_test/<id>')
+@auth.login_required
+def my_new_world(id):
+    id = int(id)
+    my_dict = {"alpha": id, "beta": "goodbye",}
+    return json.dumps(my_dict)
