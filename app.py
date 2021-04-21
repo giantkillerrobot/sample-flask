@@ -38,6 +38,7 @@ def my_world():
     logging.debug(os.environ.get('MYVAR'))
     logging.debug('My world test!')
     logging.error('Another logging entry!')
+    logging.debug(db.USERNAME)
     return 'My World!  Super simple error log'
 
 @app.route('/api_test/<value>')
