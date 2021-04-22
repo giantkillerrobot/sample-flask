@@ -34,6 +34,7 @@ def hello_world():
     return render_template("index.html")
 
 @app.route('/json-example', methods=['POST'])
+@auth.login_required
 def json_example():
     request_data = request.get_json()
 
@@ -62,6 +63,7 @@ def json_example():
             boolean_test = request_data['boolean_test']
 
     return '''
+           I am so digging this!!!!!
            The language value is: {}
            The framework value is: {}
            The Python version is: {}
