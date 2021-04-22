@@ -37,6 +37,8 @@ def hello_world():
 @auth.login_required
 def json_example():
     request_data = request.get_json()
+    logging.debug('json-example payload')
+    logging.debug(request_data)
 
     language = None
     framework = None
