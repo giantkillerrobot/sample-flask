@@ -97,3 +97,6 @@ def my_new_world(id):
     id = int(id)
     my_dict = {"alpha": id, "beta": "goodbye",}
     return json.dumps(my_dict)
+
+if __name__ == "__main__":
+    app.run()
