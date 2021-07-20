@@ -94,8 +94,8 @@ def my_api_test(value):
 @app.route('/json_test/<id>')
 @auth.login_required
 def my_new_world(id):
-    id = int(id)
-    my_dict = {"alpha": id, "beta": "goodbye",}
+    id = int(id) + 10
+    my_dict = {"alpha": id, "beta": "next_goodbye",}
     return json.dumps(my_dict)
 
 @app.route('/json_loop_test/')
