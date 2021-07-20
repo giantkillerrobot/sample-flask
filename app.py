@@ -101,7 +101,7 @@ def my_new_world(id):
 @app.route('/json_loop_test/')
 @auth.login_required
 def my_json_loop_test():
-    my_list = [{"alpha": "aaaa", "beta": "bbb",},{"alpha": "ccc", "beta": "ddd",}]
+    my_list = [{"alpha": "XXXX", "beta": "YYYY",},{"alpha": "ZZZZ", "beta": "YYYY",}]
     return json.dumps(my_list)
 
 if __name__ == "__main__":
