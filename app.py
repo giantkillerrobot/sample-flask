@@ -98,5 +98,11 @@ def my_new_world(id):
     my_dict = {"alpha": id, "beta": "goodbye",}
     return json.dumps(my_dict)
 
+@app.route('/json_loop_test/')
+@auth.login_required
+def my_json_loop_test():
+    my_list = [{"alpha": "hello", "beta": "goodbye",},{"alpha": "yes", "beta": "no",}]
+    return json.dumps(my_list)
+
 if __name__ == "__main__":
     app.run()
