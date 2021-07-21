@@ -91,6 +91,11 @@ def my_api_test(value):
     
     return json_result
 
+@app.route('/cool_beans/')
+def my_cool_beans():
+    my_dict = {"message": os.environ.get('COOL_BEANS')}
+    return json.dumps(my_dict)
+
 @app.route('/json_test/<id>')
 @auth.login_required
 def my_new_world(id):
